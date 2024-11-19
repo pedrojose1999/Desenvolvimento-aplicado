@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cidade com Fundo</title>
+  <style>
+    /* Resetando margens e preenchimentos */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    /* Cidade com imagem de fundo */
+    .city {
+      position: relative;
+      width: 100vw; /* Largura da tela */
+      height: 100vh; /* Altura da tela */
+      background-image: url('cidade.jpg'); /* Caminho da imagem da cidade */
+      background-size: cover; /* Para cobrir toda a área */
+      background-position: center; /* Centralizar a imagem */
+      border: 2px solid #000;
+      overflow: hidden;
+    }
+
+    /* Pontos de ônibus */
+    .bus-stop {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+    }
+
+    .bus-stop-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Ônibus */
+    .bus {
+      position: absolute;
+      width: 100px;
+      height: auto;
+      z-index: 2;
+      animation: moveBus 10s linear infinite;
+    }
+
+    /* Movimento do ônibus */
+    @keyframes moveBus {
+      0% {
+        top: 30%;
+        left: 0%;
+      }
+      50% {
+        top: 30%;
+        left: 80%;
+      }
+      100% {
+        top: 30%;
+        left: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Container da cidade -->
+  <div class="city">
+    <!-- Ponto de ônibus 1 -->
+    <div class="bus-stop" style="top: 16%; left: 20%; width: 7%;">
+      <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+    </div>
+
+    <!-- Ponto de ônibus 2 -->
+    <div class="bus-stop" style="top: 33%; left: 50%; width: 7%;">
+      <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+    </div>
+
+     <!-- Ponto de ônibus 3 -->
+     <div class="bus-stop" style="top: 18%; left: 69%; width: 7%;">
+        <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+      </div>
+
+      <!-- Ponto de ônibus 4 -->
+     <div class="bus-stop" style="top: 54%; left: 65%; width: 7%;">
+        <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+      </div>
+
+      <!-- Ponto de ônibus 5 -->
+     <div class="bus-stop" style="top: 79%; left: 74%; width: 7%;">
+        <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+      </div>
+
+      <!-- Ponto de ônibus 6 -->
+     <div class="bus-stop" style="top: 90%; left: 44%; width: 7%;">
+        <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+      </div>
+
+      <!-- Ponto de ônibus 7 -->
+     <div class="bus-stop" style="top: 80%; left: 12%; width: 7%;">
+        <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
+      </div>
+
+    <!-- Ônibus -->
+    <img class="bus" src="onibus.png" alt="Ônibus">
+  </div>
+
+  <script>
+    // Lógica JavaScript (se necessário)
+    console.log('Cidade carregada com sucesso!');
+  </script>
+</body>
+</html>

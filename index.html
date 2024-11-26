@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cidade com Fundo</title>
   <style>
-    /* Resetando margens e preenchimentos */
+  
     body, html {
       margin: 0;
       padding: 0;
@@ -17,16 +17,54 @@
       background-color: #f0f0f0;
     }
 
-    /* Cidade com imagem de fundo */
+
     .city {
       position: relative;
-      width: 100vw; /* Largura da tela */
-      height: 100vh; /* Altura da tela */
-      background-image: url('cidade.jpg'); /* Caminho da imagem da cidade */
-      background-size: cover; /* Para cobrir toda a área */
-      background-position: center; /* Centralizar a imagem */
+      width: 100vw; 
+      height: 100vh; 
+      background-image: url('cidade.jpg'); 
+      background-size: cover; 
+      background-position: center; 
       border: 2px solid #000;
       overflow: hidden;
+    }
+
+    /* Barra lateral ajustada */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 15%; /* Reduzindo a largura */
+      height: 100%;
+      background-color: #333;
+      color: white;
+      overflow-y: auto;
+      padding: 15px; /* Ajustando o espaçamento interno */
+      box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.2em; /* Título menor */
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 8px 0;
+      padding: 8px;
+      background-color: #444;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em; /* Fonte menor */
+    }
+
+    .sidebar li:hover {
+      background-color: #555;
     }
 
     /* Pontos de ônibus */
@@ -51,65 +89,88 @@
       z-index: 2;
       animation: moveBus 10s linear infinite;
     }
+  
 
-    /* Movimento do ônibus */
     @keyframes moveBus {
-      0% {
-        top: 30%;
-        left: 0%;
-      }
-      50% {
-        top: 30%;
-        left: 80%;
-      }
-      100% {
-        top: 30%;
-        left: 0%;
-      }
+      0% { top: 0%; left: 10%; }
+      15% { top: 25%; left: 20%; }
+      50% { top: 10%; left: 60%; }
+      100% { top: 1%; left: 90%; }
     }
+
+    @keyframes moveBus2 {
+      0% { top: 65%; left: 5%; }
+      50% { top: 80%; left: 40%; }
+      70% { top: 60%; left: 80%; }
+      100% { top: 50%; left: 100%; }
+    }
+
+    @keyframes moveBus3 {
+      0% { top: 5%; left: 100%; }
+      50% { top: 80%; left: 30%; }
+      100% { top: 80%; left: 30%; }
+    }
+  
+
   </style>
 </head>
 <body>
   <!-- Container da cidade -->
   <div class="city">
-    <!-- Ponto de ônibus 1 -->
+    <!-- Ponto de ônibus  -->
     <div class="bus-stop" style="top: 16%; left: 20%; width: 7%;">
       <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
     </div>
-
-    <!-- Ponto de ônibus 2 -->
     <div class="bus-stop" style="top: 33%; left: 50%; width: 7%;">
       <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
     </div>
-
-     <!-- Ponto de ônibus 3 -->
      <div class="bus-stop" style="top: 18%; left: 69%; width: 7%;">
         <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
       </div>
-
-      <!-- Ponto de ônibus 4 -->
      <div class="bus-stop" style="top: 54%; left: 65%; width: 7%;">
         <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
       </div>
-
-      <!-- Ponto de ônibus 5 -->
      <div class="bus-stop" style="top: 79%; left: 74%; width: 7%;">
         <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
       </div>
-
-      <!-- Ponto de ônibus 6 -->
      <div class="bus-stop" style="top: 90%; left: 44%; width: 7%;">
         <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
       </div>
-
-      <!-- Ponto de ônibus 7 -->
      <div class="bus-stop" style="top: 80%; left: 12%; width: 7%;">
         <img class="bus-stop-img" src="ponto-de-onibus.png" alt="Ponto de Ônibus">
       </div>
 
     <!-- Ônibus -->
-    <img class="bus" src="onibus.png" alt="Ônibus">
-  </div>
+    <!-- Primeiro Ônibus -->
+<div class="bus" style="top: 16%; left: 20%; animation: moveBus 12s linear infinite;">
+  <img class="bus-img" src="onibus.png" alt="Ônibus 1">
+</div>
+
+<div class="bus" style="top: 50%; left: 5%; animation: moveBus2 12s linear infinite;">
+  <img class="bus-img" src="onibus.png" alt="Ônibus 2">
+</div>
+
+<div class="bus" style="top: 4%; left: 95%; animation: moveBus3 12s linear infinite;">
+  <img class="bus-img" src="onibus.png" alt="Ônibus 3">
+</div>
+
+<div class="sidebar">
+  <h2>Horários</h2>
+  <ul>
+    <li>Ônibus 151: 08:00 - 08:35 - 09:25 - 10:00</li>
+    <li>Ônibus 271: 08:00 - 09:00 - 09:25 </li>
+    <li>Ônibus 393: 08:00 - 09:00 - 09:30 - 10:00</li>
+
+    <li>Ônibus 152: 13:00 - 13:35 - 14:25 - 15:00</li>
+    <li>Ônibus 272: 13:00 - 14:00 - 14:25</li>
+    <li>Ônibus 393: 13:00 - 14:00 - 14:30 - 15:00</li>
+
+    <li>Ônibus 153: 18:00 - 19:35 - 20:25 - 21:00</li>
+    <li>Ônibus 273: 18:00 - 19:00 - 20:25</li>
+    <li>Ônibus 394: 18:00 - 19:00 - 20:30 - 21:00</li>
+  </ul>
+</div>
+  
 
   <script>
     // Lógica JavaScript (se necessário)

@@ -38,6 +38,15 @@ body {
     width: 100%;
     letter-spacing: 2px;
   }
+  
+.bus {
+  position: absolute;
+  width: 50px !important; 
+  height: auto;
+  z-index: 2;
+  animation: moveBus 10s linear infinite;
+}
+
 
    .labelInput{
             position: absolute;
